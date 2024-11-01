@@ -1,0 +1,150 @@
+body {
+    background: url("tupian/490272CFAAFA06D5FC995E9E4D1A845F.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.top-left-image {
+    position: absolute; /* 绝对定位 */
+    top: 0; /* 距离顶部 0 */
+    left: 0; /* 距离左侧 0 */
+    width: auto; /* 根据需要设置宽度 */
+    height: 200px; /* 根据需要设置高度 */
+    z-index: 2;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+    color: black; /* 根据需要调整文本颜色 */
+}
+.text-box {
+    position: absolute; 
+    top: 200px; 
+    left: 10%; 
+    transform: translateX(-50%); 
+    width: 350px; /* 固定宽度 */
+    height: 800px; /* 固定高度 */
+    background-color: rgba(255, 255, 255, 0.288);
+    padding: 20px;
+    border-radius: 10px; /* 圆角边框 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; 
+    text-align: justify;
+    z-index: 2;
+}
+.text-box p {
+    text-indent: 2em; /* 首行缩进两格 */
+    margin: 0 0 10px; /* 段落之间的间距 */
+    color: white;
+}
+
+.centered-content {
+    position: relative; /* 使内容相对定位 */
+}
+
+.centered-image {
+    position: absolute; /* 绝对定位 */
+    left: 400px; 
+    top: 10px; 
+    width: 200px; 
+    height: auto; 
+    max-width: 100%; /* 确保图片不超过父容器宽度 */
+    z-index: 2;
+}
+
+.text-box-2 {
+    position: absolute; /* 绝对定位 */
+    left: 355px; 
+    top: 220px; /* 使文本框在图片下方，适当调整 */
+    width: 400px; 
+    height: 200px; 
+    overflow: auto; 
+    background-color: rgba(255, 255, 255, 0); 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    z-index: 2;
+}
+
+.description {
+    margin: 0; /* 段落外边距设置为 0 */
+    font-size: 18px; /* 文本大小 */
+    line-height: 1.5; /* 行高 */
+    font-weight: bold;
+    color: white;
+    text-indent: 2em; /* 首行缩进两格 */
+    margin: 0 0 10px; /* 段落之间的间距 */
+}
+
+.centered-content2 {
+    position: relative; /* 使内容相对定位 */
+}
+
+.centered-image2 {
+    position: absolute; /* 绝对定位 */
+    left: 400px; 
+    top: 400px; 
+    width: 200px; 
+    height: auto; 
+    max-width: 100%; /* 确保图片不超过父容器宽度 */
+    z-index: 2;
+}
+
+.text-box-3 {
+    position: absolute; 
+    left: 355px; 
+    top: 610px; 
+    width: 400px; 
+    height: 318px; 
+    background-color: rgba(255, 255, 255, 0); 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    z-index: 2;
+}
+
+.description {
+    margin: 0; 
+    font-size: 18px; 
+    line-height: 1.5; 
+    font-weight: bold;
+    color: white;
+    text-indent: 2em; 
+    margin: 0 0 10px; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.left-overlay {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 50%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.404); 
+    z-index: 1; 
+}
+
+.right-video {
+    position: fixed; 
+    top: 50px; 
+    right: 0; 
+    width: 50%; 
+    height: auto; 
+    z-index: 2; 
+}
+.video-caption {
+    text-align: center; 
+    color: white; 
+    font-size: 25px; 
+    margin-top: 560px; 
+    position: fixed; 
+    right: 795px; 
+    z-index: 2; 
+}
