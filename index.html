@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>艾尔登法环追忆boss图鉴</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cinzel', serif; 
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #eaeaea; 
+            position: relative; 
+        }
+
+        /* 主容器样式 */
+        .container {
+            text-align: center;
+        }
+
+        /* 按钮的通用样式 */
+        .btn {
+            padding: 20px 40px;
+            font-size: 22px;
+            border: 2px solid #555;
+            background-color: #2a2a2a;
+            color: #c0b283; /* 暗金色文字 */
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        /* 按钮悬停时效果 */
+        .btn:hover {
+            background-color: #444;
+            transform: translateY(-2px);
+        }
+
+        /* 弹出框样式 */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(28, 28, 28, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            color: #eaeaea;
+        }
+
+        /* 弹出框中的按钮 */
+        .popup button {
+            margin: 10px 0;
+            padding: 18px 36px;
+            font-size: 20px;
+            border: 2px solid #555;
+            background-color: #2a2a2a;
+            color: #c0b283; /* 暗金色文字 */
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .popup button:hover {
+            background-color: #444;
+            transform: translateY(-2px);
+        }
+
+        /* 背景遮罩样式 */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        /* 弹性盒布局 */
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* 定位样式 */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* 喇叭按钮样式 */
+        .horn-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #2a2a2a;
+            color: #c0b283;
+            border: 2px solid #555;
+            border-radius: 50%;
+            font-size: 30px;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .horn-btn:hover {
+            background-color: #444;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 主按钮 -->
+        <button class="btn" id="mainBtn">Start</button>
+    </div>
+
+    <!-- 背景遮罩 -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- 弹出框 -->
+    <div class="popup" id="popup">
+        <div class="flex-container">
+            <button class="btn" id="popupBtn1">追忆boss图鉴</button>
+            <button class="btn" id="popupBtn2">追忆物品图鉴</button>
+        </div>
+    </div>
+
+    <!-- 背景音乐 -->
+    <audio id="backgroundMusic" loop>
+        <source src="1.01 Elden Ring.flac" type="audio/flac"> 
+    </audio>
+
+    <!-- 喇叭按钮 -->
+    <button class="horn-btn" id="hornBtn">&#x1F4E2;</button> 
+    <script>
+        // 获取元素
+        const mainBtn = document.getElementById('mainBtn');
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+        const popupBtn1 = document.getElementById('popupBtn1');
+        const popupBtn2 = document.getElementById('popupBtn2');
+        const hornBtn = document.getElementById('hornBtn');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        // 点击主按钮时弹出弹窗
+        mainBtn.addEventListener('click', function() {
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+
+        // 点击遮罩关闭弹窗
+        overlay.addEventListener('click', function() {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+
+        popupBtn1.addEventListener('click', function() {
+            window.location.href = 'https://www.baidu.com'; 
+        });
+
+        popupBtn2.addEventListener('click', function() {
+            window.location.href = 'https://www.baidu.com';
+        });
+
+        // 喇叭按钮控制音乐播放和暂停
+        hornBtn.addEventListener('click', function() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            } else {
+                backgroundMusic.pause();
+            }
+        });
+    </script>
+
+</body>
+</html>
