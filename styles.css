@@ -1,0 +1,289 @@
+body {
+    background: url("tupian/490272CFAAFA06D5FC995E9E4D1A845F.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.top-left-image {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: auto; 
+    height: 200px; 
+    z-index: 2;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+    color: black; 
+}
+.text-box {
+    position: absolute; 
+    top: 200px; 
+    left: 10%; 
+    transform: translateX(-50%); 
+    width: 350px; 
+    height: 800px; 
+    background-color: rgba(255, 255, 255, 0.288);
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; 
+    text-align: justify;
+    z-index: 2;
+}
+.text-box p {
+    text-indent: 2em; 
+    margin: 0 0 10px; 
+    color: white;
+}
+
+.centered-content {
+    position: relative; 
+}
+
+.centered-image {
+    position: absolute; 
+    left: 400px; 
+    top: 10px; 
+    width: 200px; 
+    height: auto; 
+    max-width: 100%; 
+    z-index: 2;
+}
+
+.text-box-2 {
+    position: absolute; 
+    left: 355px; 
+    top: 220px; 
+    width: 400px; 
+    height: 200px; 
+    overflow: auto; 
+    background-color: rgba(255, 255, 255, 0); 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    z-index: 2;
+}
+
+.description {
+    margin: 0; 
+    font-size: 18px; 
+    line-height: 1.5; 
+    font-weight: bold;
+    color: white;
+    text-indent: 2em; 
+    margin: 0 0 10px; 
+}
+
+.centered-content2 {
+    position: relative; 
+}
+
+.centered-image2 {
+    position: absolute; 
+    left: 400px; 
+    top: 400px; 
+    width: 200px; 
+    height: auto; 
+    max-width: 100%; 
+    z-index: 2;
+}
+
+.text-box-3 {
+    position: absolute; 
+    left: 355px; 
+    top: 610px; 
+    width: 400px; 
+    height: 318px; 
+    background-color: rgba(255, 255, 255, 0); 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    z-index: 2;
+}
+
+.description {
+    margin: 0; 
+    font-size: 18px; 
+    line-height: 1.5; 
+    font-weight: bold;
+    color: white;
+    text-indent: 2em; 
+    margin: 0 0 10px; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.left-overlay {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 952px; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.404); 
+    z-index: 1; 
+}
+
+/* 视频容器*/
+.video-container {
+    position: absolute; 
+    top: 50px;          
+    left: 952px;           
+    width: 50%;     
+    height: auto;       
+    z-index: 1;         
+    overflow: hidden;   
+}
+.custom-video {
+    width: 100%;         
+    height: auto;        
+    display: block;
+    background-color: black;
+}
+
+.video-caption {
+    text-align: center; 
+    color: white; 
+    font-size: 25px; 
+    margin-top: 560px; 
+    position: fixed; 
+    left: 952px; 
+    z-index: 12; 
+}
+
+
+.clickable {
+    color: red; 
+    text-decoration: none; 
+    cursor: pointer; 
+    font-weight: bold; 
+}
+
+.clickable:hover {
+    text-decoration: underline; 
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn:hover {
+    background-color: #ccc;
+}
+
+
+.return-button {
+    position: fixed; 
+    top: 10px;      
+    left: 10px;     
+    color: white;   
+    font-size: 18px; 
+    text-decoration: none; 
+    background-color: transparent; 
+    padding: 5px 10px; 
+    border: 1px solid white; 
+    border-radius: 5px; 
+    z-index: 10; 
+    transition: all 0.3s ease; 
+}
+.return-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: black; 
+}
+
+/* 大卢恩图片父容器 */
+.image-container {
+    perspective: 1200px; 
+    display: inline-block;
+    z-index: 2;
+}
+.centered-image {
+    position: absolute;
+    left: 400px; 
+    top: 10px;   
+    width: 200px;
+    height: auto;
+    z-index: 2;
+    transform-style: preserve-3d; 
+    transition: transform 1s ease; 
+}
+
+@keyframes moveThenRotate {
+    0% {
+        transform: translateX(0) translateY(0) scale(1) rotateY(0); 
+    }
+    50% {
+        transform: translateX(425px) translateY(200px) scale(3) rotateY(0); 
+    }
+    100% {
+        transform: translateX(425px) translateY(200px) scale(3) rotateY(360deg); 
+    }
+}
+
+.centered-image:hover {
+    animation: moveThenRotate 2s ease-in-out forwards; 
+}
