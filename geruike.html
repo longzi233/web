@@ -4,9 +4,11 @@
     <title>葛瑞克</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
   </head>
   <body>
     <div class="left-overlay"></div> 
+    <a href="bossyilan.html" class="return-button">← 返回</a>
     <img src="tupian/e7f22d5f8a527ff52968e45341031dbcff3280f8.png" alt="图片" class="top-left-image">
     <div class="content">
         <div class="text-box">
@@ -28,14 +30,28 @@
                 <p class="description">透过解指的帮助，能获得追忆之主的力量。如果直接使用，能获得巨量卢恩。</p>
                 <p class="description">软弱的男人利用恐怖的接肢，渴求着力量： “众士兵啊——终有一天，我等将返家。 一同返回黄金树脚的故乡。”</p>
                 <p class="description">可以找圆桌老太婆来换葛瑞克的力量，或者直接使用，直接使用将获得20000卢恩。</p>
-                <p class="description">葛瑞克的王斧： 葛瑞克的王斧 接肢飞龙：接肢飞龙。</p>
+                <p class="description">
+                  葛瑞克的王斧：
+                  <span class="clickable" data-image="tupian/A58DCBAD0DC639A7C2BA076D31CBD807.png">葛瑞克的王斧</span>
+                  接肢飞龙：
+                  <span class="clickable" data-image="tupian/B8B0F70FA5E3E4BC79AFE22D690002EF.png">接肢飞龙</span>
+              </p>
             </div>
       </div>
     </div>
-    <video class="right-video" controls>
-      <source src="video/518338338-1-208.mp4" type="video/mp4">
+    <div class="video-container">
+    <video id="custom-video" class="custom-video" controls>
+      <source src="video/518338338-1-208Part001.mp4" type="video/mp4">
       您的浏览器不支持视频播放。
-  </video>
+    </video>
+  </div>
   <p class="video-caption">游戏战斗实机</p>
+
+            <!-- 图片弹出层 -->
+            <div id="image-modal" class="modal hidden">
+              <div class="modal-content">
+                  <span class="close-btn">&times;</span>
+                  <img id="modal-image" src="" alt="弹出图片">
+              </div>
   </body>
 </html>
