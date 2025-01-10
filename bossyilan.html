@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boss一览</title>
+	<style>
+		body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Arial', sans-serif;
+        color: white;
+		}
+	
+		#background{
+		position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        zoom: 1;				
+        background-image: url("tupian/beijing.png");
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position: 0 0;
+		}
+		#exitbutton {
+	            position: fixed; 
+	            top: 0px;
+	            left: 0px;
+	            padding: 10px 20px;
+	            font-size: 16px;
+	            cursor: pointer;
+	            color: white;
+	            background-color: rgba(0, 0, 0, 0.5);
+	            border: none;
+	            border-radius: 5px;
+				z-index: 1;
+				}
+			
+		#buttons{
+		position: fixed;
+		top: 80px;
+		left:0px;
+		width: 170px;
+		height: 50px;
+		line-height: 50px;
+		background-color:rgba(0,0,0,0.7);
+		z-index: 3;
+		}
+	
+		#sumboss{
+		padding-left: 20px;
+		color:#D9c007;
+		cursor: pointer;
+		}
+		#sumboss:hover {
+	    background-color: #000;
+		}
+		
+		.bossbutton{
+		background-color:rgba(0,0,0,0.7);
+		padding-left: 20px;
+		color:#D9c007;
+		cursor: pointer;
+		}
+		.bossbutton:hover{
+		background-color: #000;
+		}
+		
+		#bossmessages{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 2;
+		}
+		#message{
+			position: fixed;
+			top: 10%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 700px;
+			height: 500px;
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+		
+		#mexit{
+			position: fixed;
+			right: 0px;
+			cursor: pointer;
+			border: none;
+			z-index: 3;
+			font-size: 16px;
+		}
+		#mapmessage{
+			position: fixed;
+			top: 330px;
+			width: 700px;
+			height: 200px;
+		}
+		.maptext{
+			padding-left: 40px;
+			width: 200px;
+			height: 40px;
+			cursor: pointer;
+		}
+		.maptext:hover{
+			text-decoration: underline;
+		}
+		#bossmessage{
+			top: 400px;
+			left: 65%;
+			transform: translateX(-65%);
+			position: fixed;
+			width: 300px;
+			height: 100px;
+			color: #D9c007;
+			font-size: 60px;
+			font-weight: bold;
+			text-decoration:none;
+		}
+		a {
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration:underline;
+			}
+
+		@keyframes fadeIn {
+		    from {
+		        opacity: 0;
+		    }
+		    to {
+		        opacity: 1;
+		    }
+		}
+		 
+		@keyframes fadeOut {
+		    from {
+		        opacity: 1;
+		    }
+		    to {
+		        opacity: 0;
+		    }
+		}
+		 
+		.mapimage {
+		    position: fixed;
+		    padding: 5px 5px;
+		    width: 300px;
+		    height: 300px;
+		    opacity: 0; /* 初始状态设置为完全透明 */
+		    animation-duration: 0.5s; /* 动画持续时间 */
+		    animation-fill-mode: forwards; /* 动画结束后保持最终状态 */
+		}
+		 
+		.mapimage.show {
+		    animation-name: fadeIn; /* 应用淡入动画 */
+		}
+		 
+		.mapimage.hide {
+		    animation-name: fadeOut; /* 应用淡出动画 */
+		}
+		.bossimage{
+			position: fixed;
+			padding: 0px 350px;
+			width: 330px;
+			height: 330px;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<a href="" id="exitbutton">返回</a>
+	
+	<div id="background"></div>
+	
+	<div id="buttons">
+	    <div id="sumboss" onclick="showboss()">boss一览</div>
+	    <div class="bossbutton" onclick="boss(1)" style="display: none">葛瑞克</a></div>
+		<div class="bossbutton" onclick="boss(2)" style="display: none">蕾娜拉</a></div>
+		<div class="bossbutton" onclick="boss(3)" style="display: none">拉塔恩</a></div>
+		<div class="bossbutton" onclick="boss(4)" style="display: none">拉卡德</a></div>
+		<div class="bossbutton" onclick="boss(5)" style="display: none">蒙格</a></div>
+		<div class="bossbutton" onclick="boss(6)" style="display: none">蒙格特</a></div>
+		<div class="bossbutton" onclick="boss(7)" style="display: none">女武神</a></div>
+		<div class="bossbutton" onclick="boss(8)" style="display: none">艾尔登之兽</a></div>
+	</div>
+	
+	<div id="bossmessages" style="display: none">
+		
+		<div id="message">
+			<div id="mexit" onclick="exitmessage()">X</div>
+			
+			<div id="images" >
+				<img class="mapimage" id="bossmap1" src="" style="display: none"/>
+				<img class="mapimage" id="bossmap2" src="" style="display: none"/>
+				<img class="mapimage" id="bossmap3" src="" style="display: none"/>
+				<img class="bossimage" id="bossimg" src="" style="display: none"/>
+			</div>
+			
+			<div id="mapmessage">
+				<div class="maptext" id="mapmessage3" onclick="map(3)"></div>
+				<div class="maptext" id="mapmessage2" onclick="map(2)"></div>
+				<div class="maptext" id="mapmessage1" onclick="map(1)"></div>
+			</div>
+		</div>
+		<div id="bossmessage" ><a style="color:inherit;" href="/eldenbossyilan/geruike.html">详细信息</a></div>
+	</div>
+	<div id="texts">
+		<span id="maptext1-1" style="display: none">深处小房间赐福点</span>
+		<span id="maptext1-2" style="display: none">史东薇尔城</span>
+		<span id="maptext1-3" style="display: none">宁姆格福</span>
+		
+		<span id="maptext2-1" style="display: none">雷亚卢卡利亚大书库赐福点</span>
+		<span id="maptext2-2" style="display: none">雷亚卢卡利亚魔法学院</span>
+		<span id="maptext2-3" style="display: none">湖之利耶尼亚</span>
+		
+		<span id="maptext3-1" style="display: none">红狮子城广场赐福点</span>
+		<span id="maptext3-2" style="display: none">红狮子城</span>
+		<span id="maptext3-3" style="display: none">盖利得</span>
+		
+		<span id="maptext4-1" style="display: none">谒见之路赐福点</span>
+		<span id="maptext4-2" style="display: none">火山官邸</span>
+		<span id="maptext4-3" style="display: none">亚坛高原</span>
+		
+		<span id="maptext5-1" style="display: none">王朝庙中段赐福点</span>
+		<span id="maptext5-2" style="display: none">鲜血王朝</span>
+		<span id="maptext5-3" style="display: none">（地下）希芙拉河</span>
+		
+		<span id="maptext6-1" style="display: none">女王闺阁赐福点</span>
+		<span id="maptext6-2" style="display: none">王城罗德尔</span>
+		<span id="maptext6-3" style="display: none">亚坛高原</span>
+		
+		<span id="maptext7-1" style="display: none">圣树底层赐福点</span>
+		<span id="maptext7-2" style="display: none">米凯拉的圣树</span>
+		<span id="maptext7-3" style="display: none">化圣雪原</span>
+		
+		<span id="maptext8-1" style="display: none">艾尔登宝座赐福点</span>
+		<span id="maptext8-2" style="display: none">黄金树</span>
+		<span id="maptext8-3" style="display: none">亚坛高原</span>
+		
+		
+		<span id="boss01" style="display: none">/eldenbossyilan/geruike.html</span>
+		<span id="boss02" style="display: none">/eldenbossyilan/leinala.html</span>
+		<span id="boss03" style="display: none">/eldenbossyilan/lataen.html</span>
+		<span id="boss04" style="display: none">/eldenbossyilan/lakade.html</span>
+		<span id="boss05" style="display: none">/eldenbossyilan/mengge.html</span>
+		<span id="boss06" style="display: none">/eldenbossyilan/menggete.html</span>
+		<span id="boss07" style="display: none">/eldenbossyilan/nvwushen.html</span>
+		<span id="boss08" style="display: none">/eldenbossyilan/pidan.html</span>
+	</div>
+	
+</body>
+<script src="bossyilan.js"></script>
+</html>

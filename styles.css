@@ -125,42 +125,33 @@ body {
     position: fixed; 
     top: 0; 
     left: 0; 
-    width: 952px; 
+    width: 50%; 
     height: 100%;
     background-color: rgba(0, 0, 0, 0.404); 
     z-index: 1; 
 }
 
-/* 视频容器*/
-.video-container {
-    position: absolute; 
-    top: 50px;          
-    left: 952px;           
-    width: 50%;     
-    height: auto;       
-    z-index: 1;         
-    overflow: hidden;   
+.right-video {
+    position: fixed; 
+    top: 50px; 
+    right: 0; 
+    width: 50%; 
+    height: auto; 
+    z-index: 2; 
 }
-.custom-video {
-    width: 100%;         
-    height: auto;        
-    display: block;
-    background-color: black;
-}
-
 .video-caption {
     text-align: center; 
     color: white; 
     font-size: 25px; 
     margin-top: 560px; 
     position: fixed; 
-    left: 952px; 
-    z-index: 12; 
+    right: 795px; 
+    z-index: 2; 
 }
 
 
 .clickable {
-    color: red; 
+    color: white; 
     text-decoration: none; 
     cursor: pointer; 
     font-weight: bold; 
@@ -235,55 +226,24 @@ body {
     background-color: #ccc;
 }
 
-
+/* 返回按钮样式 */
 .return-button {
-    position: fixed; 
-    top: 10px;      
-    left: 10px;     
-    color: white;   
-    font-size: 18px; 
-    text-decoration: none; 
-    background-color: transparent; 
-    padding: 5px 10px; 
-    border: 1px solid white; 
-    border-radius: 5px; 
-    z-index: 10; 
-    transition: all 0.3s ease; 
+    position: fixed; /* 固定位置 */
+    top: 10px;      /* 距顶部 10px */
+    left: 10px;     /* 距左边 10px */
+    color: white;   /* 文字颜色为白色 */
+    font-size: 18px; /* 字体大小 */
+    text-decoration: none; /* 去除下划线 */
+    background-color: transparent; /* 背景透明 */
+    padding: 5px 10px; /* 内边距 */
+    border: 1px solid white; /* 白色边框 */
+    border-radius: 5px; /* 圆角 */
+    z-index: 10; /* 置于前层 */
+    transition: all 0.3s ease; /* 动画过渡 */
 }
+
+/* 鼠标悬停效果 */
 .return-button:hover {
-    background-color: rgba(255, 255, 255, 0.2); 
-    color: black; 
-}
-
-/* 大卢恩图片父容器 */
-.image-container {
-    perspective: 1200px; 
-    display: inline-block;
-    z-index: 2;
-}
-.centered-image {
-    position: absolute;
-    left: 400px; 
-    top: 10px;   
-    width: 200px;
-    height: auto;
-    z-index: 2;
-    transform-style: preserve-3d; 
-    transition: transform 1s ease; 
-}
-
-@keyframes moveThenRotate {
-    0% {
-        transform: translateX(0) translateY(0) scale(1) rotateY(0); 
-    }
-    50% {
-        transform: translateX(425px) translateY(200px) scale(3) rotateY(0); 
-    }
-    100% {
-        transform: translateX(425px) translateY(200px) scale(3) rotateY(360deg); 
-    }
-}
-
-.centered-image:hover {
-    animation: moveThenRotate 2s ease-in-out forwards; 
+    background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
+    color: black; /* 文字颜色变为黑色 */
 }
